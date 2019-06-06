@@ -1,22 +1,26 @@
 // JS goes here
 const fadeNavPanel = function(){
+  TweenMax.fromTo('.nav-page', 1, {opacity:0}, {opacity: .9})
+}
+
   //--------------greensock------------------------//
-  TweenMax.from('.nav-page', 1, {display: 'flex', backgroundColor:'red', opacity:.9, zIndex:19, })
+  // TweenMax.from('.nav-page', 1, {display: 'flex', backgroundColor:'red', opacity:.9, zIndex:19, })
 
   //-----------tweenMax attempt for navBTN---------//
   // TweenMax.to(target, 1, {opacity: 1});
   // TweenMax.to(target, 1, {opacity:0});
   // TweenMax.from(target, 1, {opacity: 1});
-}
 
-const showNavPanel = function(){
+
+const showNavPanel = function() {
   navPage[0].classList.toggle('showNav');
-//------------------Another great example of forEach--------------//
+//----------Another great example of forEach-----------//
   // navBTNOpen.classList.toggle('hide-icon');
   // navBTNClose.classList.toggle('hide-icon');
   navBTN.forEach( (target) => {
     target.classList.toggle('hide-icon');
   });
+  fadeNavPanel();
 }
 
 const navOpacity = function(){
